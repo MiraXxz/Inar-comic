@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+  <div class="container">
+    <!-- LOGO -->
+    <a class="navbar-brand" href="#">
+    <!-- add logo here -->
+    <img src="{{logo_src}}" width="60" class="d-inline-block align-bottom" alt="">
+      Comic
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        @for (item of links; track item) {
+
+          @if (item.title == "Read") {
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Read
+              </a>
+
+              <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+                <li>
+
+                  @for (chapter of chapters; track chapter) {
+                    <a class="{{'dropdown-item ' + (chapter.disabled ? ' disabled' : '') }}" href="{{chapter.disabled ? '#' : chapter.link}}" >
+                    <img src="{{chapter.thumbNail}}" width="30" class="d-inline-block align-top" alt="">
+                    {{chapter.title}}
+                    
+                    @if (chapter.disabled) {
+                      <mat-icon class="display-inline-block float-end align-bottom" style="font-size: medium">lock</mat-icon>
+                    }
+                    </a>
+                  }
+
+              </ul>
+            </li>
+
+
+          } @else {
+            <li class="nav-item">
+              <a class="{{ 'nav-link' + (item.disabled ? ' disabled' : '')}}" tabindex="-1" aria-disabled="false" aria-current="page" routerLink="{{item.link}}" >{{item.title}}</a>
+            </li>
+          } 
+          
+        }
+  
+      </ul>
+
+    </div>
+  </div>
+</nav>

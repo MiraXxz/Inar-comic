@@ -1,0 +1,63 @@
+
+.readingPage{
+    height: 90vh;
+    /* padding-top: 2%; */
+    width: 100%;
+}
+
+.listItem{
+    color: #f4e5ce;
+}
+
+
+
+
+
+
+a:link {
+  color: #f4e5ce;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #916f3c;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #916f3c;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #cfa360;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+
+
+
+
+.listItem:hover {
+  /* transform: scaleY(0.66);
+  transform-origin: center; */
+  background-color:  #4e0101;;
+}
+
+/* .listItem:hover{
+  transform: scaleY(0.8);
+  transform-origin: center;
+  background-color: rgb(44, 7, 7);
+} */
+
+div[disabled]{
+  background-color: #340f0f;
+}
+
+div[disabled]:hover {
+  background-color: #340f0f;
+}

@@ -1,0 +1,41 @@
+.img-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 600px; */
+  width: 50%;
+  border: 1px solid black;
+  padding: 0;
+  margin: 0;
+}
+
+.page-img{
+  width: 100%;
+  height: 100%;
+}
+
+.chapters-bar{
+    /* position: fixed; */
+    /* width: 100%; */
+}
+
+.next-btn{  
+  
+}
+
+.next-btn:hover{
+  background-color: rgb(188, 188, 188);
+}
+
+.next-btn:hover{
+  cursor: pointer;
+  background-color: rgb(188, 188, 188);
+}
+
+div[disabled]:hover{
+  background-color: white;
+}
+
+div[disabled]{
+  text-color: grey;
+}
