@@ -22,6 +22,12 @@ export class ReadingPageComponent {
   selectedChapter: number = 0;
   selectedPage: number = 0;
 
+  loading_status_1: string = "";
+  loading_status_2: string = "";
+  loading_image: string = "images/logo-loading.gif";
+
+  
+
   pages : LinkItem[] = [];
 
   chapters: chapterItem[]= environment.chaptersList;
@@ -62,6 +68,9 @@ export class ReadingPageComponent {
 
   changePage(next: boolean = true){
 
+    this.loading_status_1= "";
+    this.loading_status_2= "";
+
     let goToPage = -1;
     let goToChapter = -1;
 
@@ -97,8 +106,16 @@ export class ReadingPageComponent {
      
       this.img1 = this.getImageUrl(this.selectedChapter+1, pages_arr[0].replace(' ', ""));
       this.img2 = this.getImageUrl(this.selectedChapter+1, pages_arr[1].replace(' ', ""));
+
+      this.loading_status_1 = "loading";
+      this.loading_status_2 = "loading";
   }
 
+  setLoadingStatus(first: boolean){
+    console.log("IMAGE IS LOADED")
+    if (first) this.loading_status_1 = "loaded";
+    else this.loading_status_2 = "loaded";
+  }
 
   ngOnInit(): void {
     let ch = this.activatedRoute.snapshot.paramMap.get('ch')
