@@ -8,4 +8,5 @@ export const environment = {
     {id: 4, title: "After the Last Stitch", link: "/comic/4/1-2", disabled: true, thumbNail: "images/thumb-ch4.png", pages: 10},
   ]
   
+  
 };
