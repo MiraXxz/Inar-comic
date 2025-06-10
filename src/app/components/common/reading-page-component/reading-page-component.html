@@ -30,7 +30,7 @@
 
 
     <div class="row pt-2 rounded">
-        <div class="col-lg-6 border rounded-start p-3 next-btn" (click)="changePage(false)">
+        <div class="col border rounded-start p-3 next-btn" (click)="changePage(false)">
             <mat-icon class="align-bottom">keyboard_arrow_left</mat-icon>
             previous Page
             
@@ -43,23 +43,33 @@
         </div>
     </div>
 
+    @if(loading_status_1 == "loading" || loading_status_1 == ""){
+
+          <div class="row">
+<img src="{{loading_image}}" width="100">
+    </div>
+
+                    
+                }
+  
+
     <div class="row">
 
        
             <div class="col img-div w-100">
                 @if(loading_status_1 == "loading" || loading_status_1 == ""){
                     <img src="{{loading_image}}" width="100">
-                }@else {
-                    <img src="{{img1}}" (load)="setLoadingStatus(true)" class="page-img" alt="" style="width: 100%; object-fit: cover;">
                 }
+                <img src="{{img1}}" (load)="setLoadingStatus(true)" class="page-img" alt="" style="width: 100%; object-fit: cover;">
+                
             </div>
 
             <div class="col img-div"> 
                   @if(loading_status_2 == "loading" || loading_status_2 == ""){
                     <img src="{{loading_image}}" width="100">
-                }@else {
-                    <img src="{{img2}}" (load)="setLoadingStatus(false)" class="page-img" alt="" style="width: 100%; object-fit: cover;">
-                } 
+                }
+                <img src="{{img2}}" (load)="setLoadingStatus(false)" class="page-img" alt="" style="width: 100%; object-fit: cover;">
+                
             </div>
         
         
