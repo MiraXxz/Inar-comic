@@ -1,0 +1,7 @@
+{
+  "routes": {
+    "/Inar-comic": {},
+    "/Inar-comic/chaptersList": {},
+    "/Inar-comic/home": {}
+  }
+}
